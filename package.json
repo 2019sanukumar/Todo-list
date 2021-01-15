@@ -1,0 +1,25 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "a to do list ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sanu",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.9"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2019sanukumar/gitit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/2019sanukumar/gitit/issues"
+  },
+  "homepage": "https://github.com/2019sanukumar/gitit#readme"
+}

@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>
+            <%= title%>
+        </title>
+        <script src="https://kit.fontawesome.com/084745bdd0.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css" >
+
+    </head>
+    <body>
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <h1 id="heading" >
+            <!-- <i class="fas fa-address-book"></i> -->
+            <i class="fas fa-tasks"></i>
+            To do list
+        </h1>
+       
+        <form action="/create-contact" method="POST" id="form">
+            
+            <input type="text" name="name" placeholder="Enter task name" required>
+            <br>
+            <input type="date" name="phone" placeholder="enter date" required>
+            <!-- dropdown -->
+            <br>
+            <input type="time" id="time" placeholder ="enter time" name="time" required>
+            <br>
+            <form action="/action_page.php">
+                <!-- <label for="category">Choose a category:</label> -->
+                <select id="category" name="category">
+                  <option value="Personal">Personal</option>
+                  <option value="Work">Work</option>
+                  <option value="School">School</option>
+                  <option value="Cleaning">Cleaning</option>
+                  <option value="Other">Other</option>
+                </select>
+                <br>
+                <input type="submit">
+            </form> 
+            <!-- <button type="submit">add task</button> -->
+        </form>
+       
+        <div id="container"> 
+            <ul>
+                <% for(let i of contact_list){%>
+                    <li class="contact">  
+                        <div class="details">
+                            <!-- <p>Descripton:</p> -->
+                            <p class="el"> 
+                        
+                                <%= i.name %>
+                            </p>
+                            <p class="el"> 
+                                <%= i.phone %>
+                                <!-- <%= i.date %> -->
+                            </p>
+                            <p class="el">
+                                <%= i.time %>
+                            </p>
+                            <p class="el">
+                                <%= i.category%>
+                            </p>
+
+                        </div>
+                        <div id="delete-buttom">
+                            <a href="/delete-contact/<%=i.id%>">
+                                <!-- <i class="fas fa-minus-circle"></i> -->
+                                <i class="fas fa-user-minus"></i>
+                                
+                            </a>
+                        </div>
+                        
+                    </li>
+
+                <%}%>
+
+            </ul>
+
+        </div>
+        
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>
